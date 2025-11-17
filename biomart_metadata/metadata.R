@@ -1,0 +1,41 @@
+#gene metadata was generated using following R code
+
+################################################################################
+# %% Imports
+
+library(biomaRt)
+library(tidyverse)
+
+################################################################################
+# %% Command-line arguments
+
+args = commandArgs(trailingOnly = TRUE)
+OUTPUT_DIR = args[1]
+
+################################################################################
+# %% Main script
+
+OUTPUT_DIR = "/Users/p.coli/Desktop/tximport_quant/ENSEMBL"
+
+mart = useEnsembl(
+    biomart = "ensembl",
+    dataset = "hsapiens_gene_ensembl",
+    #version = 114,
+    mirror = "asia"
+)
+
+tab = getBM(
+    attributes = c(
+          "ensembl_gene_id",
+          "ensembl_gene_id_version",
+          "chromosome_name",
+          "start_position",
+          "end_position",
+          "external_gene_name",
+          "gene_biotype"
+    ),
+    mart = mart
+)
+
+write_tsv(tab, file.path(OUTPUT_DIR, "gene-metadata.tsv"))
+

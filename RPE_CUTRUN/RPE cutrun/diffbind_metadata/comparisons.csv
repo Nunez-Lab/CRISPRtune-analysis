@@ -1,0 +1,7 @@
+Contrast,Targeting,Control,outfile_name
+Condition,CRISPRi_CD55,CRISPRi_NT,CRISPRi_NT_CD55
+Condition,CRISPRtune_CD55,CRISPRtune_NT,CRISPRtune_NT_CD55
+Condition,dCas9_CD55,dCas9_NT,dCas9_NT_CD55
+Condition,CRISPRi_CD55,WT_WT,CRISPRi_WT_CD55
+Condition,CRISPRtune_CD55,WT_WT,CRISPRtune_WT_CD55
+Condition,dCas9_CD55,WT_WT,dCas9_WT_CD55
